@@ -4,7 +4,7 @@
       "tjmHt": 1200,
       "nbJours": 20,
       "tva": 20,
-      "state": "OPTION",
+      "state": "CONFIRMED",
       "typePresta": "formation",
       "client": "Capgemini2",
       "comment": "24k",
@@ -24,7 +24,7 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "CANCELLED",
+      "state": "CONFIRMED",
       "typePresta": "formation",
       "client": "Capgemini",
       "comment": null,
@@ -34,7 +34,7 @@
       "tjmHt": 1200,
       "nbJours": 12,
       "tva": 20,
-      "state": "CONFIRMED",
+      "state": "CANCELLED",
       "typePresta": "formation",
       "client": "Capgemini",
       "comment": "14k",
@@ -53,27 +53,27 @@
   ],
   "clients": [
     {
-      "state": "INACTIVE",
+      "state": "ACTIVE",
       "tva": 20,
+      "comment": "un comment pour client modis",
       "id": 1,
       "name": "Capgemini",
-      "totalCaHt": 120000,
-      "comment": "un comment pour client modis"
+      "totalCaHt": 120000
     },
     {
       "state": "ACTIVE",
       "tva": 20,
+      "comment": "un comment pour client modis",
       "id": 2,
       "name": "Modis",
-      "totalCaHt": 120000,
-      "comment": "un comment pour client modis"
+      "totalCaHt": 120000
     },
     {
-      "tva": 20,
       "state": "INACTIVE",
+      "tva": 20,
+      "comment": "rsger",
       "name": "modis",
       "totalCaHt": 0,
-      "comment": "rsger",
       "id": 3
     }
   ]

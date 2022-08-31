@@ -1,1 +1,28 @@
-<p>page-list-clients works!</p>
+<app-template-full-width [titleEnfant]='titleParent' *ngIf='collection$ | async as collection'>
+  <!-- ajouter un tableau -->
+  <app-table-light
+  [headers]='headers'
+  >
+  <!-- ici on projète le tableau -->
+    <tr *ngFor='let item of collection'>
+      <!--  table data cells (td)-->
+      <td>Action</td>
+      <td>{{item.name}}</td>
+      <td>{{item.totalCaHt}}</td>
+      <td>{{item.tva}}</td>
+      <td>{{item.comment}}</td>
+      <td appState [state]='item.state'>
+        <select (change)='changeState(item,$event)'>
+          <option  *ngFor='let state of states'
+          [selected]='state === item.state'
+          >{{state}}</option>
+        </select>
+      </td>
+    </tr>
+  </app-table-light>
+  <app-btn styleBtn='btn btn-primary'
+route='add'
+label='Ajouter'
+>
+</app-btn>
+</app-template-full-width>

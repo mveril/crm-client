@@ -1,0 +1,16 @@
+<!-- collection est un tableau donc il faut utiliser *ngFor -->
+<table class="table">
+  <!-- thead utile pour le référencement -->
+  <thead>
+    <!-- table row (ligne) -->
+    <tr>
+      <!--   table header cells (th) -->
+      <!-- itérer dans headers -->
+      <th *ngFor='let item of headers' scope="col">{{item}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-content></ng-content>
+    <!-- itérer dans collection -->
+  </tbody>
+</table>
