@@ -6,18 +6,27 @@ import { PageEditClientComponent } from './pages/page-edit-client/page-edit-clie
 import { PageAddClientComponent } from './pages/page-add-client/page-add-client.component';
 import { PageListClientsComponent } from './pages/page-list-clients/page-list-clients.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormClientComponent } from './components/form-client/form-client.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     PageEditClientComponent,
     PageAddClientComponent,
-    PageListClientsComponent
+    PageListClientsComponent,
+    FormClientComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    ClientsRoutingModule
+    ClientsRoutingModule,
+    ReactiveFormsModule,
+    RouterModule
+  ],
+  exports: [
+    FormClientComponent
   ]
 })
 export class ClientsModule { }

@@ -1,1 +1,7 @@
-<p>page-edit-client works!</p>
+<app-template-full-width titleEnfant="Editer un client">
+  <app-form-client 
+    [init]="item"
+    (submitted)="onEdit($event)"
+    *ngIf="item$ | async as item"
+    >></app-form-client>
+</app-template-full-width>

@@ -32,4 +32,11 @@ export class ClientsService {
   update(obj: Client) : Observable<Client> {
     return this.http.put<Client>(`${this.urlApi}/Clients/${obj.id}`,obj);
   }
+
+  add(obj: Client) : Observable<Client> {
+    return this.http.post<Client>(`${this.urlApi}/clients`,obj);
+  }
+  getItemById(id: number): Observable<Client> {
+    return this.http.get<Client>(`${this.urlApi}/clients/${id}`);
+  }
 }

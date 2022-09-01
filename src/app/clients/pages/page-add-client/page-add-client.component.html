@@ -1,1 +1,3 @@
-<p>page-add-client works!</p>
+<app-template-full-width titleEnfant="Ajouter une commande">
+  <app-form-client (submitted)="onSubmit($event)" [init] = "order"></app-form-client>
+</app-template-full-width>
