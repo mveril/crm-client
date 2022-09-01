@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/modeles/order';
@@ -11,7 +12,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrdersComponent implements OnInit {
   // créer la variable titleParent;
-  titleParent: string = 'Titre depuis Parent';
+  titleParent: string = 'Liste des commandes';
   states = Object.values(StateOrder);
   collection!: Order[];
   collection$: Observable<Order[]>;
@@ -28,7 +29,7 @@ export class PageListOrdersComponent implements OnInit {
     'State',
   ];
 
-  constructor(private ordersService: OrdersService) {
+  constructor(private ordersService: OrdersService,private routeur: Router) {
     // ici on déclenche sumUp
     // console.log(this.ordersService.sumUp(1, 2), 'fonction sumUp');
     this.collection$ = this.ordersService.collection
@@ -54,4 +55,8 @@ export class PageListOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  goToEdit(item:Order){
+    this.routeur.navigate(["orders","edit",item.id.toString()])
+  }
 }

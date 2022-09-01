@@ -1,1 +1,7 @@
-<p>page-edit-order works!</p>
+<app-template-full-width >
+  <app-form-order
+  [init]="item"
+  (submitted)="onEdit($event)"
+  *ngIf="item$ | async as item"
+  ></app-form-order>
+</app-template-full-width>

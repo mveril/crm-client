@@ -1,1 +1,6 @@
-<p>page-add-order works!</p>
+<app-template-full-width titleEnfant="Ajouter une commande">
+  <app-form-order (submitted)="onSubmit($event)" [init] = "order"></app-form-order>
+</app-template-full-width>
+
+<!-- on veut passer un nouvel Order à app-form-order -->
+<!-- vérifier que vous avez un new order dans app-form -->
