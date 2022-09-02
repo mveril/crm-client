@@ -29,7 +29,7 @@ export class PageListOrdersComponent implements OnInit {
     'State',
   ];
 
-  constructor(private ordersService: OrdersService,private routeur: Router) {
+  constructor(private ordersService: OrdersService,private router: Router) {
     // ici on déclenche sumUp
     // console.log(this.ordersService.sumUp(1, 2), 'fonction sumUp');
     this.collection$ = this.ordersService.collection
@@ -57,6 +57,12 @@ export class PageListOrdersComponent implements OnInit {
   ngOnInit(): void {}
 
   goToEdit(item:Order){
-    this.routeur.navigate(["orders","edit",item.id.toString()])
+    this.router.navigate(["orders","edit",item.id.toString()])
+  }
+  
+  deleteItem(item:Order){
+    if(confirm("Voulez-vous vraiment surpprimer cet item")){
+      this.ordersService.delete(item).subscribe();
+    }
   }
 }
