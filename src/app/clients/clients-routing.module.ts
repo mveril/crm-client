@@ -10,7 +10,7 @@ const routes: Routes = [
   // localhost:4200/orders/add
   { path: 'add', component: PageAddClientComponent },
   // localhost:4200/orders/edit
-  { path: 'edit', component: PageEditClientComponent },
+  { path: 'edit/:id', component: PageEditClientComponent },
 ];
 
 @NgModule({

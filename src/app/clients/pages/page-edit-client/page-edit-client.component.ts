@@ -32,7 +32,7 @@ export class PageEditClientComponent implements OnInit {
 
   onEdit(order:Client){
     this.ClientsService.update(order).subscribe(()=>{
-      this.router.navigate(["Clients"]);
+      this.router.navigate(["clients"]);
     })
   }
 }

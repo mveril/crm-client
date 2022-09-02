@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { StateClient } from 'src/app/core/enums/state-client';
 import { Client } from 'src/app/core/modeles/client';
 import { ClientsService } from 'src/app/clients/services/clients.service';
+import { Order } from 'src/app/core/modeles/order';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-list-clients',
@@ -24,7 +26,7 @@ export class PageListClientsComponent implements OnInit {
     'state'
   ];
 
-  constructor(private clientsService: ClientsService) {
+  constructor(private clientsService: ClientsService, private router : Router) {
     // ici on déclenche sumUp
     // console.log(this.clientsService.sumUp(1, 2), 'fonction sumUp');
     this.collection$ = this.clientsService.collection
@@ -49,6 +51,13 @@ export class PageListClientsComponent implements OnInit {
     })
   }
 
+  goToEdit(item:Client){
+    this.router.navigate(["clients","edit",item.id.toString()])
+  }
+
+  removeItem(client:Client){
+    this.clientsService.remove(client).subscribe();
+  }
   ngOnInit(): void {
   }
 
